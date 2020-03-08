@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SAS.Api.v2.Infrastructure.EntityConfigurations;
+using SAS.Api.v2.Models;
 
 namespace SAS.Api.v2.Infrastructure
 {
@@ -12,6 +13,8 @@ namespace SAS.Api.v2.Infrastructure
         public DomainContext(DbContextOptions options) : base(options)
         {
         }
+
+        public virtual DbSet<Goods> Goods { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
